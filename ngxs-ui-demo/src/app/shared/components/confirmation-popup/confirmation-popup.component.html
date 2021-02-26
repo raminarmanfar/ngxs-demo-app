@@ -1,0 +1,20 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image">
+      <img src="../../../../assets/qe-marks.webp" width="50px" height="50px">
+    </div>
+    <mat-card-title>{{ data.title }}</mat-card-title>
+    <mat-card-subtitle>{{ data.subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ data.bodyMessage }}</p>
+  </mat-card-content>
+  <mat-card-actions class="actions-btn-container">
+    <button mat-raised-button color="primary" (click)="onClick(data.confirmBtn)"
+            matTooltip="{{ data.confirmBtn | uppercase }}"
+    >{{ data.confirmBtn }}</button>
+    <button mat-raised-button color="accent" (click)="onClick(data.cancelBtn)"
+            matTooltip="{{ data.cancelBtn | uppercase }}"
+    >{{ data.cancelBtn }}</button>
+  </mat-card-actions>
+</mat-card>

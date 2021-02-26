@@ -1,0 +1,12 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>{{ label }}</mat-label>
+    <input matInput placeholder="{{ placeholder }}" (change)="onTextChange()"
+           [formControl]="formControl" *ngIf="isSingleLine; else multiLined">
+    <ng-template #multiLined>
+      <textarea matInput placeholder="{{ placeholder }}" (change)="onTextChange()"
+                [formControl]="formControl" class="multiline-input"></textarea>
+    </ng-template>
+    <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+</form>
